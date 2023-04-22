@@ -1,11 +1,13 @@
-package com.blo.com.blo;
+package com.blo;
 
-import com.dao.VilleDAO;
-import com.dto.Ville;
+import java.util.ArrayList;
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.ArrayList;
+import com.dao.VilleDAO;
+import com.dto.Ville;
 @Service
 public class VilleBLOImpl implements VilleBLO{
 
@@ -24,4 +26,34 @@ public class VilleBLOImpl implements VilleBLO{
         }
         return info;
     }
+    
+    @Override
+    public List<Ville> getVilles(){
+    	List<Ville> listVille = new ArrayList<>();
+    	listVille = villeDAO.recupererVilles();
+    	return listVille;
+    }
+
+	@Override
+	public void addVille(Ville ville) {
+		villeDAO.save(ville);
+	}
+
+	@Override
+	public void deleteVille(String nomVille) {
+		villeDAO.deleteVille(nomVille);
+	}
+
+	@Override
+	public void updateVille(Ville ville) {
+		villeDAO.updateVille(ville);
+	}
+
+    @Override
+	public Ville getVilleByNom(String nom) {
+		return villeDAO.getVilleByNom(nom);
+	}
+
+
+    
 }

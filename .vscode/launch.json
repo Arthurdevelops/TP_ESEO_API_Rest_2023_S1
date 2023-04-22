@@ -1,0 +1,14 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Spring Boot-App<API_REST_SERVEUR_TP2.0>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "com.App",
+            "projectName": "API_REST_SERVEUR_TP2.0",
+            "args": "",
+            "envFile": "${workspaceFolder}/.env"
+        }
+    ]
+}
